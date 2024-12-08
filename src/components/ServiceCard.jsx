@@ -1,13 +1,15 @@
-import React from 'react';
-
 const ServiceCard = ({ icon, title, description }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300">
-      <div className="mb-4 flex justify-center">
-        {icon}
-      </div>
+    <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition-all duration-300">
+      <div className="mb-4 ">{icon}</div>
       <h3 className="text-xl font-bold text-primary-blue mb-2">{title}</h3>
-      <p className="text-secondary-blue">{description}</p>
+      <ul className="list-disc">
+        {description.map((desc) => (
+          <li className="text-[#18191C] mr-6" key={desc}>
+            {desc}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
